@@ -1,5 +1,11 @@
+import Router from "./common/navigation/Router";
+
 function App() {
-  return <div></div>;
+	return (
+		<>
+			<Router />
+		</>
+	);
 }
 
 export default App;
