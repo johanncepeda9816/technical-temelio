@@ -1,18 +1,11 @@
-import { ChangeEvent } from "react";
-import CustomInput from "../../atoms/input/CustomInput";
+import OrganizationForm from "../../organisms/create-organization/OrganizationForm";
 
 const HomePage = () => {
 	return (
 		<div>
 			<div></div>
 			<h1>This is a home page</h1>
-			<CustomInput
-				onChange={function (e: ChangeEvent<HTMLInputElement>): void {
-					throw new Error("Function not implemented.");
-				}}
-				value={""}
-				placeholder={"Ingrea un texto"}
-			/>
+			<OrganizationForm />
 		</div>
 	);
 };

@@ -5,6 +5,7 @@ const theme = {
 	light: "#ffff",
 	dark: "#0c0c0c",
 	gray: "#ccc",
+	error: "#ff0000",
 };
 
 export default theme;
