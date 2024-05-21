@@ -1,9 +1,21 @@
 import { CSSProperties } from "react";
 import theme from "../../../utils/theme";
 
+const inputStyle: CSSProperties = {
+	margin: 0,
+	padding: 0,
+};
+
 const styles: Record<string, CSSProperties> = {
-	label: { padding: 10, color: theme.error },
-	error: { padding: 10 },
+	error: {
+		...inputStyle,
+		padding: 10,
+		color: theme.error,
+	},
+	label: {
+		...inputStyle,
+		padding: 10,
+	},
 };
 
 export { styles };

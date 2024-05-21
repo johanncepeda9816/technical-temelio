@@ -6,6 +6,7 @@ const CustomInput = ({
 	value,
 	placeholder,
 	type = "text",
+	onBlur,
 }: ICustomInputProps) => {
 	return (
 		<input
@@ -14,6 +15,7 @@ const CustomInput = ({
 			value={value}
 			placeholder={placeholder}
 			type={type}
+			onBlur={onBlur}
 		/>
 	);
 };
