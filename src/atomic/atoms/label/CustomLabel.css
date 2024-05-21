@@ -1,0 +1,13 @@
+.inputStyle {
+	margin: 0;
+	padding: 0;
+}
+
+.error {
+	padding: 10px;
+	color: var(--error);
+}
+
+.label {
+	padding: 10px;
+}

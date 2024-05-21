@@ -5,12 +5,12 @@ export interface IOrganizationFormProps {
 }
 
 const organizationScheme = yup.object().shape({
-	name: yup.string().required("El nombre es requerido"),
+	name: yup.string().required("The name is required"),
 	email: yup
 		.string()
-		.email("El email no es valido")
-		.required("El email es requerido"),
-	address: yup.string().required("La dirección es requerida"),
+		.email("The email is not valid")
+		.required("The email is required"),
+	address: yup.string().required("The address is required"),
 });
 
 const initalState = {

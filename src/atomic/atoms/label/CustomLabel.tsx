@@ -1,8 +1,10 @@
-import { styles } from "./CustomLabel.styles";
 import { ICustomLabelProps } from "./CustomLabel.types";
+import "./CustomLabel.css";
 
 const CustomLabel = ({ label, isError = false }: ICustomLabelProps) => {
-	return <p style={isError ? styles.error : styles.label}>{label}</p>;
+	return (
+		<p className={`inputStyle ${isError ? "error" : "label"}`}>{label}</p>
+	);
 };
 
 export default CustomLabel;

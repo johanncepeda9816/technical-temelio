@@ -1,5 +1,5 @@
-import { styles } from "./CustomInput.styles";
 import { ICustomInputProps } from "./CustomInput.types";
+import "./CustomInput.css";
 
 const CustomInput = ({
 	onChange,
@@ -10,7 +10,7 @@ const CustomInput = ({
 }: ICustomInputProps) => {
 	return (
 		<input
-			style={styles}
+			className="input"
 			onChange={onChange}
 			value={value}
 			placeholder={placeholder}
