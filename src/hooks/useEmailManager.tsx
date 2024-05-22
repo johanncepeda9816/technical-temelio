@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { IEmail, IOrganization } from "../utils/types";
 import { toast } from "react-toastify";
 import { basicTemplate, replacePlaceholders } from "../utils/helpers";
 
-const BASE_URL = "http://localhost:8080/api/v1/organizations";
-const ENDPOINT_SAVE = "/save";
+const BASE_URL = "http://localhost:8080/api/v1/email-manager";
+const ENDPOINT_SAVE = "/send";
 const ENDPOINT_GET_LIST = "/list";
 
 const useEmailManager = () => {
@@ -30,7 +30,7 @@ const useEmailManager = () => {
 			}
 		} catch (error) {
 			console.error("Error getting organizations", error);
-			toast.error("Unknown error getting organizations");
+			toast.error("Unknown error getting email list");
 			return [];
 		} finally {
 			setLoading(false);
@@ -51,27 +51,24 @@ const useEmailManager = () => {
 				};
 			});
 
-			console.log("Formatted", formatted);
-
-			// const response = await fetch(`${BASE_URL}${ENDPOINT_SAVE}`, {
-			// 	method: "POST",
-			// 	headers: {
-			// 		"Content-Type": "application/json",
-			// 	},
-			// 	body: JSON.stringify(organization),
-			// });
-			// if (response.ok) {
-			// 	toast.success("Organization saved successfully");
-			// 	return true;
-			// } else {
-			// 	const errorData = await response.json();
-			// 	toast.error("Error: " + errorData.message);
-			// 	return false;
-			// }
-			return false;
+			const response = await fetch(`${BASE_URL}${ENDPOINT_SAVE}`, {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify(formatted),
+			});
+			if (response.ok) {
+				toast.success("Massive emails sent successfully");
+				return true;
+			} else {
+				const errorData = await response.json();
+				toast.error("Error: " + errorData.message);
+				return false;
+			}
 		} catch (error) {
-			console.error("Error saving organization", error);
-			toast.error("Unknown error saving organization");
+			console.error("Error sending emails to organization", error);
+			toast.error("Unknown error sending emails");
 			return false;
 		} finally {
 			setLoading(false);
