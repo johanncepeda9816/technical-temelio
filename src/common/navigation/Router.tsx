@@ -1,10 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import HomePage from "../../atomic/pages/home/HomePage";
+import OrganizationPage from "../../atomic/pages/home/CreateOrganizationPage";
 
 const Router = () => {
 	return (
 		<Routes>
-			<Route path="/" element={<HomePage />} />
+			<Route path="/" element={<OrganizationPage />} />
 		</Routes>
 	);
 };

@@ -1,6 +1,6 @@
 import { Formik } from "formik";
 import FormField from "../../molecules/form-field/FormField";
-import { initalState, organizationScheme } from "../OrganizationForm.types";
+import { initalState, organizationScheme } from "./OrganizationForm.types";
 import CustomButton from "../../atoms/button/CustomButton";
 import "./OrganizationForm.css";
 
