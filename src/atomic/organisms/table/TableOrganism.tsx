@@ -104,6 +104,7 @@ export const CustomTable = ({
 				paginationModel={paginationModel}
 				onPaginationModelChange={setPaginationModel}
 				loading={loading}
+				autoPageSize
 			/>
 		</Grid>
 	);

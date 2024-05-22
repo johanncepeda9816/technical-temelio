@@ -9,10 +9,10 @@ interface IProps {
 const OrganizationTemplate = ({ onSubmit }: IProps) => {
 	return (
 		<div className="organization-template">
-			<main className="main-content">
+			<div className="main-content">
 				<h1>New Organization</h1>
 				<OrganizationForm onSubmit={onSubmit} />
-			</main>
+			</div>
 		</div>
 	);
 };

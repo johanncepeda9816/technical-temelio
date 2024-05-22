@@ -20,7 +20,7 @@ const EditorTemplate = () => {
 	};
 
 	return (
-		<div style={{ paddingBottom: "50px" }}>
+		<div style={{ paddingBottom: "50px" }} data-testid="editor-template">
 			<h1>Email Editor</h1>
 			<EditorOrganism
 				emailTemplate={emailTemplate}

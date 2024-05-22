@@ -31,7 +31,10 @@ export default function AdminDashboardPage(props: Props) {
 		window !== undefined ? () => window().document.body : undefined;
 
 	return (
-		<Box sx={{ display: "flex", height: "100vh" }}>
+		<Box
+			sx={{ display: "flex", height: "100vh" }}
+			data-testid="drawer-container"
+		>
 			<Toolbar>
 				<IconButton
 					color="inherit"
@@ -39,6 +42,7 @@ export default function AdminDashboardPage(props: Props) {
 					edge="start"
 					onClick={handleDrawerToggle}
 					sx={{ mr: 2, display: { sm: "none" } }}
+					data-testid="menu-drawer-button"
 				>
 					<MenuIcon />
 				</IconButton>
@@ -103,6 +107,7 @@ export default function AdminDashboardPage(props: Props) {
 			<Box
 				component="main"
 				sx={{ flexGrow: 1, bgcolor: theme.white, p: 3 }}
+				data-testid="main-content"
 			>
 				<Toolbar />
 				{currentOption === "New Organization" && <OrganizationPage />}

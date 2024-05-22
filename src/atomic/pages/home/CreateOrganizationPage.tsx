@@ -4,7 +4,11 @@ import OrganizationTemplate from "../../templates/organization/OrganizationTempl
 const OrganizationPage = () => {
 	const { saveOrganization } = useOrganization();
 
-	return <OrganizationTemplate onSubmit={saveOrganization} />;
+	return (
+		<div data-testid="organization-page">
+			<OrganizationTemplate onSubmit={saveOrganization} />
+		</div>
+	);
 };
 
 export default OrganizationPage;

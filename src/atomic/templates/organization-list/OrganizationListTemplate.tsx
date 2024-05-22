@@ -6,7 +6,7 @@ const OrganizationListTemplate = () => {
 	const { organizationList } = useOrganization();
 
 	return (
-		<div>
+		<div data-testid="organization-list">
 			<h1>Organization List</h1>
 			<CustomTable
 				columns={columns}
