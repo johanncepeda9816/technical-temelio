@@ -2,6 +2,7 @@ import StorageIcon from "@mui/icons-material/Storage";
 import EmailIcon from "@mui/icons-material/Email";
 import BookIcon from "@mui/icons-material/Book";
 import theme from "./theme";
+import { IOrganization } from "./types";
 
 const menu = [
 	{
@@ -40,4 +41,11 @@ const basicTemplate = `
 
 `;
 
-export { menu, databaseMenu, basicTemplate };
+const replacePlaceholders = (template: string, organization: IOrganization) => {
+	return template
+		.replace(/{name}/g, organization.name)
+		.replace(/{email}/g, organization.email)
+		.replace(/{address}/g, organization.address);
+};
+
+export { menu, databaseMenu, basicTemplate, replacePlaceholders };

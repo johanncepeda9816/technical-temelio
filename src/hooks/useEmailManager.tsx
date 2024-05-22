@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { IEmail, IOrganization } from "../utils/types";
 import { toast } from "react-toastify";
-import { basicTemplate } from "../utils/helpers";
+import { basicTemplate, replacePlaceholders } from "../utils/helpers";
 
 const BASE_URL = "http://localhost:8080/api/v1/organizations";
 const ENDPOINT_SAVE = "/save";
@@ -43,6 +43,16 @@ const useEmailManager = () => {
 	): Promise<boolean> => {
 		try {
 			setLoading(true);
+
+			const formatted = organizationList.map((item) => {
+				return {
+					organization: item,
+					template: replacePlaceholders(template, item),
+				};
+			});
+
+			console.log("Formatted", formatted);
+
 			// const response = await fetch(`${BASE_URL}${ENDPOINT_SAVE}`, {
 			// 	method: "POST",
 			// 	headers: {
