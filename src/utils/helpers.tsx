@@ -9,7 +9,7 @@ const menu = [
 		icon: <BookIcon style={{ color: theme.light }} />,
 	},
 	{
-		label: "Email editor",
+		label: "Email manager",
 		icon: <EmailIcon style={{ color: theme.light }} />,
 	},
 ];

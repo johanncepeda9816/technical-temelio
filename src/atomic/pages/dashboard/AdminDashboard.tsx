@@ -12,6 +12,7 @@ import theme from "../../../utils/theme";
 import DrawerChild from "../../organisms/drawer/DrawerChild";
 import OrganizationPage from "../home/CreateOrganizationPage";
 import OrganizationListTemplate from "../../templates/organization-list/OrganizationListTemplate";
+import EditorTemplate from "../../templates/editor/EditorTemplate";
 
 const drawerWidth = 240;
 
@@ -119,6 +120,7 @@ export default function AdminDashboardPage(props: Props) {
 				{currentOption === "Organizations List" && (
 					<OrganizationListTemplate />
 				)}
+				{currentOption === "Email manager" && <EditorTemplate />}
 			</Box>
 		</Box>
 	);
