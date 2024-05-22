@@ -1,6 +1,4 @@
 export interface ISelectProps {
 	options: any[];
-	value?: string;
-	onChange?: (value: string) => void;
-	placeholder?: string;
+	onChange: (value: string[]) => void;
 }

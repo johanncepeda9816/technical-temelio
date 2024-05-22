@@ -5,3 +5,8 @@ export interface IOrganization {
 	email: string;
 	address: string;
 }
+
+export interface IEmail {
+	organization: IOrganization;
+	emailContent: string;
+}
