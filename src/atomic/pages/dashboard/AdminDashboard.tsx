@@ -11,6 +11,7 @@ import { databaseMenu, menu } from "../../../utils/helpers";
 import theme from "../../../utils/theme";
 import DrawerChild from "../../organisms/drawer/DrawerChild";
 import OrganizationPage from "../home/CreateOrganizationPage";
+import OrganizationListTemplate from "../../templates/organization-list/OrganizationListTemplate";
 
 const drawerWidth = 240;
 
@@ -120,6 +121,9 @@ export default function AdminDashboardPage(props: Props) {
 			>
 				<Toolbar />
 				{currentOption === "New Organization" && <OrganizationPage />}
+				{currentOption === "Organizations List" && (
+					<OrganizationListTemplate />
+				)}
 			</Box>
 		</Box>
 	);

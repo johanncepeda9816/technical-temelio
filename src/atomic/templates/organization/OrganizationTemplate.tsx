@@ -1,5 +1,5 @@
-import { IOrganization } from "../../utils/types";
-import OrganizationForm from "../organisms/create-organization/OrganizationForm";
+import { IOrganization } from "../../../utils/types";
+import OrganizationForm from "../../organisms/create-organization/OrganizationForm";
 import "./OrganizationTemplate.css";
 
 interface IProps {

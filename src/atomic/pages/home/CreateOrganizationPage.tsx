@@ -1,5 +1,5 @@
 import useOrganization from "../../../hooks/useOrganization";
-import OrganizationTemplate from "../../templates/OrganizationTemplate";
+import OrganizationTemplate from "../../templates/organization/OrganizationTemplate";
 
 const OrganizationPage = () => {
 	const { saveOrganization } = useOrganization();
