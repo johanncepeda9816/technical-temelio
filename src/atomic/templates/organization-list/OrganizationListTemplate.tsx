@@ -5,8 +5,6 @@ import { columns } from "./List.types";
 const OrganizationListTemplate = () => {
 	const { organizationList } = useOrganization();
 
-	console.log(organizationList);
-
 	return (
 		<div>
 			<h1>Organization List</h1>
