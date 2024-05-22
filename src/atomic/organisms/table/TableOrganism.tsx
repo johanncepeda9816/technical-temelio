@@ -5,6 +5,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./Table.styles.css";
 import CustomButton from "../../atoms/button/CustomButton";
 import { TableProps } from "./Table.types";
+import { RemoveRedEye } from "@mui/icons-material";
 
 export const CustomTable = ({
 	columns,

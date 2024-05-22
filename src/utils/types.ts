@@ -4,9 +4,11 @@ export interface IOrganization {
 	name: string;
 	email: string;
 	address: string;
+	emailSent?: boolean;
 }
 
 export interface IEmail {
+	createdAt: string;
 	organization: IOrganization;
 	template: string;
 }
