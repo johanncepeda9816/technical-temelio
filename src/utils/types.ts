@@ -1,6 +1,6 @@
 export interface IOrganization {
 	id: string;
-	date?: string;
+	createdAt?: string;
 	name: string;
 	email: string;
 	address: string;
@@ -8,5 +8,5 @@ export interface IOrganization {
 
 export interface IEmail {
 	organization: IOrganization;
-	emailContent: string;
+	template: string;
 }

@@ -2,7 +2,6 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import LogoutIcon from "@mui/icons-material/Logout";
 import Toolbar from "@mui/material/Toolbar";
 import { useState } from "react";
@@ -13,6 +12,7 @@ import DrawerChild from "../../organisms/drawer/DrawerChild";
 import OrganizationPage from "../home/CreateOrganizationPage";
 import OrganizationListTemplate from "../../templates/organization-list/OrganizationListTemplate";
 import EditorTemplate from "../../templates/editor/EditorTemplate";
+import EmailListTemplate from "../../templates/email-list/EmailListTemplate";
 
 const drawerWidth = 240;
 
@@ -121,6 +121,7 @@ export default function AdminDashboardPage(props: Props) {
 					<OrganizationListTemplate />
 				)}
 				{currentOption === "Email manager" && <EditorTemplate />}
+				{currentOption === "Email List" && <EmailListTemplate />}
 			</Box>
 		</Box>
 	);

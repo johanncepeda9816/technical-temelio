@@ -21,7 +21,7 @@ const databaseMenu = [
 		icon: <StorageIcon style={{ color: theme.light }} />,
 	},
 	{
-		label: "Sent Emails",
+		label: "Email List",
 		icon: <StorageIcon style={{ color: theme.light }} />,
 	},
 ];

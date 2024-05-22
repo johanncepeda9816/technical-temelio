@@ -19,7 +19,14 @@ const useEmailManager = () => {
 			if (response.ok) {
 				const data = await response.json();
 				const formattedData = data.map((item: IEmail) => {
-					return { ...item, id: item.organization.email };
+					return {
+						id: item.organization.email,
+						createdAt: item.organization.createdAt,
+						name: item.organization.name,
+						email: item.organization.email,
+						address: item.organization.address,
+						template: item.template,
+					};
 				});
 				setEmailList(formattedData);
 				return data;
