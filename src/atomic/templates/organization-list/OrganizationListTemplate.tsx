@@ -1,11 +1,12 @@
 import { CustomTable } from "../../organisms/table/TableOrganism";
+import { columns } from "./List.types";
 
 const OrganizationListTemplate = () => {
 	return (
 		<div>
 			<h1>Organization List</h1>
 			<CustomTable
-				columns={[]}
+				columns={columns}
 				rows={[]}
 				headerName={""}
 				onPageChange={undefined}

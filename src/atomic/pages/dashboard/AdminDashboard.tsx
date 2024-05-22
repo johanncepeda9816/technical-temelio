@@ -31,11 +31,6 @@ export default function AdminDashboardPage(props: Props) {
 
 	const options = [
 		{
-			label: "Volver al inicio",
-			icon: <ArrowBackIcon />,
-			action: () => navigate("/"),
-		},
-		{
 			label: "Cerrar Sesión",
 			icon: <LogoutIcon />,
 			action: async () => {},

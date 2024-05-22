@@ -1,34 +1,10 @@
 import { Box, Grid, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
 import { DataGrid, GridColDef, GridRowsProp } from "@mui/x-data-grid";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./Table.styles.css";
 import CustomButton from "../../atoms/button/CustomButton";
-
-export interface Column {
-	field: string;
-	headerName: string;
-	flex?: number;
-	type?: "string" | "number" | "date" | "dateTime";
-}
-
-export interface IAction {
-	label: string;
-	action: (item: any) => void;
-	visible?: false;
-}
-
-interface TableProps {
-	columns: Column[];
-	rows: GridRowsProp;
-	pageSize?: number;
-	headerName: string;
-	actions?: IAction[];
-	loading?: boolean;
-	onPageChange: any;
-	buttonRef?: string;
-	buttonRefClick?: any;
-}
+import { TableProps } from "./Table.types";
 
 export const CustomTable = ({
 	columns,
@@ -68,9 +44,6 @@ export const CustomTable = ({
 		...column,
 		headerClassName: "columnHeader",
 		renderCell: (params) => {
-			if (column.headerName === "Fecha creación") {
-				return <span className={"rowItemText"}>{params.value}</span>;
-			}
 			return (
 				<>
 					<span className={"rowItemText"}>{params.value}</span>
