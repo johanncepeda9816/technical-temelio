@@ -38,6 +38,7 @@ const OrganizationForm = ({ onSubmit }: IProps) => {
 						error={touched.name && errors.name !== undefined}
 						errorLabel={errors.name}
 						onBlur={handleBlur("name")}
+						disabled={isSubmitting}
 					/>
 					<FormField
 						label="Email"
@@ -47,6 +48,7 @@ const OrganizationForm = ({ onSubmit }: IProps) => {
 						error={touched.email && errors.email !== undefined}
 						errorLabel={errors.email}
 						onBlur={handleBlur("email")}
+						disabled={isSubmitting}
 					/>
 					<FormField
 						label="Address"
@@ -56,6 +58,7 @@ const OrganizationForm = ({ onSubmit }: IProps) => {
 						error={touched.address && errors.address !== undefined}
 						errorLabel={errors.address}
 						onBlur={handleBlur("address")}
+						disabled={isSubmitting}
 					/>
 					<CustomButton
 						label="Save Organization"

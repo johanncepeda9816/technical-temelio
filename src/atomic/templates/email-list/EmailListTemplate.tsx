@@ -16,7 +16,7 @@ const EmailListTemplate = () => {
 
 	return (
 		<div data-testid="email-list">
-			<h1>Organization List</h1>
+			<h1>Email List</h1>
 			<CustomTable
 				columns={columns}
 				rows={emailList}

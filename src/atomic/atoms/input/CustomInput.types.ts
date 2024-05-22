@@ -4,4 +4,5 @@ export interface ICustomInputProps {
 	value: string;
 	placeholder: string;
 	type?: string;
+	disabled?: boolean;
 }

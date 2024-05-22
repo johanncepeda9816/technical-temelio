@@ -7,6 +7,7 @@ const CustomInput = ({
 	placeholder,
 	type = "text",
 	onBlur,
+	disabled,
 }: ICustomInputProps) => {
 	return (
 		<input
@@ -17,6 +18,7 @@ const CustomInput = ({
 			type={type}
 			onBlur={onBlur}
 			maxLength={100}
+			disabled={disabled}
 		/>
 	);
 };
