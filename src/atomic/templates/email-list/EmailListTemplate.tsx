@@ -1,11 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import useEmailManager from "../../../hooks/useEmailManager";
 import { CustomTable } from "../../organisms/table/TableOrganism";
 import { columns } from "./EmailList.types";
 import { RemoveRedEye } from "@mui/icons-material";
+import { IEmail } from "../../../utils/types";
+import CustomModal from "../../molecules/modal/CustomModal";
 
 const EmailListTemplate = () => {
 	const { getEmailList, emailList } = useEmailManager();
+	const [template, setTemplate] = useState<string>();
 
 	useEffect(() => {
 		getEmailList();
@@ -22,10 +25,19 @@ const EmailListTemplate = () => {
 				actions={[
 					{
 						label: "View",
-						action: (id: string) => {},
+						action: (item: IEmail) => {
+							setTemplate(item.template);
+						},
 					},
 				]}
 			/>
+
+			<CustomModal
+				isOpen={template !== undefined}
+				onClose={() => setTemplate(undefined)}
+			>
+				<div dangerouslySetInnerHTML={{ __html: template ?? "" }}></div>
+			</CustomModal>
 		</div>
 	);
 };
