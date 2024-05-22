@@ -11,26 +11,33 @@ const EditorTemplate = () => {
 		useEmailManager();
 	const [selectedEmails, setSelectedEmails] = useState<string[]>([]);
 
-	const onSent = () => {
+	const onSent = async () => {
 		const selectedOrganizations = organizationList.filter((item) => {
 			return selectedEmails.includes(item.email);
 		});
-		sentMassiveEmail(emailTemplate, selectedOrganizations);
+		const ok = await sentMassiveEmail(emailTemplate, selectedOrganizations);
+		if (ok) setSelectedEmails([]);
 	};
 
 	return (
-		<div>
+		<div style={{ paddingBottom: "50px" }}>
 			<h1>Email Editor</h1>
 			<EditorOrganism
 				emailTemplate={emailTemplate}
 				setEmailTemplate={setEmailTemplate}
 			/>
 			<h1>Send email to:</h1>
-			<CustomSelect
-				options={organizationList.map((item) => item.email)}
-				onChange={(selected: string[]) => setSelectedEmails(selected)}
-			/>
-			<CustomButton label="Send Massive" onClick={onSent} />
+			<div style={{ maxWidth: "500px" }}>
+				<CustomSelect
+					options={organizationList.map((item) => item.email)}
+					onChange={(selected: string[]) =>
+						setSelectedEmails(selected)
+					}
+					selectedOptions={selectedEmails}
+				/>
+			</div>
+
+			<CustomButton label="Send Massive Emails" onClick={onSent} />
 		</div>
 	);
 };

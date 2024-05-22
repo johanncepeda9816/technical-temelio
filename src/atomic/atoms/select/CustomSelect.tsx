@@ -4,11 +4,8 @@ import Option from "../option/Option";
 import { customStyles } from "./Select.styles";
 import { ISelectProps } from "./Select.types";
 
-const CustomSelect = ({ options, onChange }: ISelectProps) => {
-	const [selectedOptions, setSelectedOptions] = useState<any>([]);
-
+const CustomSelect = ({ options, selectedOptions, onChange }: ISelectProps) => {
 	const handleChange = (selected: any) => {
-		setSelectedOptions(selected);
 		onChange(selected.map((item: any) => item.value));
 	};
 

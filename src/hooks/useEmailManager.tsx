@@ -29,7 +29,7 @@ const useEmailManager = () => {
 				return [];
 			}
 		} catch (error) {
-			console.error("Error getting organizations", error);
+			console.error("Error getting email List", error);
 			toast.error("Unknown error getting email list");
 			return [];
 		} finally {
@@ -60,6 +60,7 @@ const useEmailManager = () => {
 			});
 			if (response.ok) {
 				toast.success("Massive emails sent successfully");
+				setEmailList([]);
 				return true;
 			} else {
 				const errorData = await response.json();
