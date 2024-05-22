@@ -3,13 +3,19 @@ import FormField from "../../molecules/form-field/FormField";
 import { initalState, organizationScheme } from "./OrganizationForm.types";
 import CustomButton from "../../atoms/button/CustomButton";
 import "./OrganizationForm.css";
+import { IOrganization } from "../../../utils/types";
 
-const OrganizationForm = () => {
+interface IProps {
+	onSubmit: (organization: IOrganization) => Promise<void>;
+}
+
+const OrganizationForm = ({ onSubmit }: IProps) => {
 	return (
 		<Formik
 			initialValues={initalState}
-			onSubmit={(values) => {
-				console.log("Values:", values);
+			onSubmit={async (values, { resetForm }) => {
+				await onSubmit(values as IOrganization);
+				resetForm();
 			}}
 			validationSchema={organizationScheme}
 			validateOnBlur
@@ -21,6 +27,7 @@ const OrganizationForm = () => {
 				values,
 				errors,
 				touched,
+				isSubmitting,
 			}) => (
 				<div className="form-inner">
 					<FormField
@@ -53,6 +60,7 @@ const OrganizationForm = () => {
 					<CustomButton
 						label="Save Organization"
 						onClick={handleSubmit}
+						loading={isSubmitting}
 					/>
 				</div>
 			)}
