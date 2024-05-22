@@ -3,7 +3,7 @@ import OrganizationForm from "../organisms/create-organization/OrganizationForm"
 import "./OrganizationTemplate.css";
 
 interface IProps {
-	onSubmit: (organization: IOrganization) => Promise<void>;
+	onSubmit: (organization: IOrganization) => Promise<boolean>;
 }
 
 const OrganizationTemplate = ({ onSubmit }: IProps) => {

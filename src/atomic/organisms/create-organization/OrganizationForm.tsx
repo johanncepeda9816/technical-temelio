@@ -6,7 +6,7 @@ import "./OrganizationForm.css";
 import { IOrganization } from "../../../utils/types";
 
 interface IProps {
-	onSubmit: (organization: IOrganization) => Promise<void>;
+	onSubmit: (organization: IOrganization) => Promise<boolean>;
 }
 
 const OrganizationForm = ({ onSubmit }: IProps) => {
@@ -14,8 +14,8 @@ const OrganizationForm = ({ onSubmit }: IProps) => {
 		<Formik
 			initialValues={initalState}
 			onSubmit={async (values, { resetForm }) => {
-				await onSubmit(values as IOrganization);
-				resetForm();
+				const success = await onSubmit(values as IOrganization);
+				if (success) resetForm();
 			}}
 			validationSchema={organizationScheme}
 			validateOnBlur
