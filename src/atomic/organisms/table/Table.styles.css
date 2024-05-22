@@ -12,7 +12,7 @@
 
 .columnHeader {
 	display: flex;
-	background-color: var(--primary);
+	background-color: var(--third);
 	color: var(--light);
 	font-size: 1rem;
 	font-family: "Roboto Slab", serif;
