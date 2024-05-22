@@ -49,7 +49,11 @@ export default function AdminDashboardPage(props: Props) {
 			</Toolbar>
 			<Box
 				component="nav"
-				sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
+				sx={{
+					width: { sm: drawerWidth },
+					flexShrink: { sm: 0 },
+					bgcolor: theme.background,
+				}}
 				aria-label="mailbox folders"
 			>
 				<Drawer
@@ -106,7 +110,7 @@ export default function AdminDashboardPage(props: Props) {
 			</Box>
 			<Box
 				component="main"
-				sx={{ flexGrow: 1, bgcolor: theme.white, p: 3 }}
+				sx={{ flexGrow: 1, bgcolor: theme.background, p: 3 }}
 				data-testid="main-content"
 			>
 				<Toolbar />
