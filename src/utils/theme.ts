@@ -7,6 +7,7 @@ const theme = {
 	gray: "#ccc",
 	error: "#ff0000",
 	background: "#f0f9f9",
+	white: "#fff",
 };
 
 export default theme;

@@ -113,7 +113,7 @@ export default function AdminDashboardPage(props: Props) {
 			</Box>
 			<Box
 				component="main"
-				sx={{ flexGrow: 1, bgcolor: theme.light, p: 3 }}
+				sx={{ flexGrow: 1, bgcolor: theme.white, p: 3 }}
 			>
 				<Toolbar />
 				{currentOption === "New Organization" && <OrganizationPage />}
