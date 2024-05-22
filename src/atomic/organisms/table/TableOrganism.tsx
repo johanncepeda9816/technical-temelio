@@ -1,11 +1,10 @@
-import { Box, Grid, IconButton, Menu, MenuItem, Tooltip } from "@mui/material";
-import { DataGrid, GridColDef, GridRowsProp } from "@mui/x-data-grid";
+import { Box, Grid, IconButton, Menu, MenuItem } from "@mui/material";
+import { DataGrid, GridColDef } from "@mui/x-data-grid";
 import { useState } from "react";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import "./Table.styles.css";
 import CustomButton from "../../atoms/button/CustomButton";
 import { TableProps } from "./Table.types";
-import { RemoveRedEye } from "@mui/icons-material";
 
 export const CustomTable = ({
 	columns,
@@ -13,7 +12,6 @@ export const CustomTable = ({
 	pageSize = 5,
 	actions,
 	loading = false,
-	onPageChange,
 	buttonRef,
 	buttonRefClick,
 }: TableProps) => {
@@ -23,10 +21,6 @@ export const CustomTable = ({
 		pageSize: pageSize,
 		page: 0,
 	});
-
-	// useEffect(() => {
-	// 	onPageChange(paginationModel.page);
-	// }, [paginationModel.page]);
 
 	const handleMenuClick = (
 		event: React.MouseEvent<HTMLButtonElement>,

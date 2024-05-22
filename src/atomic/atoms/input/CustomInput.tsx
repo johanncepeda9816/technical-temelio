@@ -16,6 +16,7 @@ const CustomInput = ({
 			placeholder={placeholder}
 			type={type}
 			onBlur={onBlur}
+			maxLength={100}
 		/>
 	);
 };

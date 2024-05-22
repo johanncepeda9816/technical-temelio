@@ -54,23 +54,6 @@ const DrawerChild = (props: IProps) => {
 				))}
 			</List>
 			<Divider />
-
-			<List className={"listItems"} style={{ marginTop: "100%" }}>
-				{options.map((item, index) => (
-					<ListItem key={index} disablePadding onClick={item.action}>
-						<ListItemButton>
-							<ListItemIcon style={{ color: theme.light }}>
-								{item.icon}
-							</ListItemIcon>
-							<ListItemText
-								primary={item.label}
-								style={{ color: theme.light }}
-							/>
-						</ListItemButton>
-					</ListItem>
-				))}
-			</List>
-			<Divider />
 		</div>
 	);
 };

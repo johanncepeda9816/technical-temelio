@@ -2,10 +2,8 @@ import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import MenuIcon from "@mui/icons-material/Menu";
-import LogoutIcon from "@mui/icons-material/Logout";
 import Toolbar from "@mui/material/Toolbar";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import { databaseMenu, menu } from "../../../utils/helpers";
 import theme from "../../../utils/theme";
 import DrawerChild from "../../organisms/drawer/DrawerChild";
@@ -24,19 +22,10 @@ export default function AdminDashboardPage(props: Props) {
 	const { window } = props;
 	const [mobileOpen, setMobileOpen] = useState(false);
 	const [currentOption, setCurrentOption] = useState("New Organization");
-	const navigate = useNavigate();
 
 	const handleDrawerToggle = () => {
 		setMobileOpen(!mobileOpen);
 	};
-
-	const options = [
-		{
-			label: "Cerrar Sesión",
-			icon: <LogoutIcon />,
-			action: async () => {},
-		},
-	];
 
 	const container =
 		window !== undefined ? () => window().document.body : undefined;
@@ -84,7 +73,7 @@ export default function AdminDashboardPage(props: Props) {
 						handleDrawerToggle={handleDrawerToggle}
 						setCurrentOption={setCurrentOption}
 						menu={menu}
-						options={options}
+						options={[]}
 					/>
 				</Drawer>
 				<Drawer
@@ -107,7 +96,7 @@ export default function AdminDashboardPage(props: Props) {
 						handleDrawerToggle={handleDrawerToggle}
 						setCurrentOption={setCurrentOption}
 						menu={menu}
-						options={options}
+						options={[]}
 					/>
 				</Drawer>
 			</Box>

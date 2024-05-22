@@ -18,7 +18,6 @@ const useEmailManager = () => {
 			const response = await fetch(`${BASE_URL}${ENDPOINT_GET_LIST}`);
 			if (response.ok) {
 				const data = await response.json();
-				console.log("DATA", data);
 				const formattedData = data.map((item: IEmail) => {
 					return {
 						id: item.organization.email,
