@@ -1,14 +1,10 @@
 import useOrganization from "../../../hooks/useOrganization";
 import OrganizationTemplate from "../../templates/OrganizationTemplate";
 
-const HomePage = () => {
+const OrganizationPage = () => {
 	const { saveOrganization } = useOrganization();
 
-	return (
-		<div>
-			<OrganizationTemplate onSubmit={saveOrganization} />
-		</div>
-	);
+	return <OrganizationTemplate onSubmit={saveOrganization} />;
 };
 
-export default HomePage;
+export default OrganizationPage;

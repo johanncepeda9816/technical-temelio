@@ -1,11 +1,12 @@
 :root {
 	--primary: #1e2035;
 	--secondary: #ffbf32;
-	--third: #25cad9;
-	--light: #ffff;
+	--third: #2f85a5;
+	--light: #f0f9f9;
 	--dark: #0c0c0c;
 	--gray: #ccc;
 	--error: #ff0000;
+	--background: white;
 }
 
 body {
@@ -20,4 +21,30 @@ body {
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
+}
+
+.item {
+	border-radius: 10px;
+}
+
+.itemActive {
+	background-color: var(--primary);
+	border-top-left-radius: 30px;
+	border-bottom-left-radius: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+.listItems {
+	padding: 10px;
+	padding-right: 0px;
+	width: 100%;
+}
+
+.container-main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
 }

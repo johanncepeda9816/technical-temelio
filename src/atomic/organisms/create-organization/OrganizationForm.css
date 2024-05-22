@@ -1,5 +1,6 @@
 .form-inner {
-	max-width: 500px;
+	width: auto;
 	border-radius: 5px;
 	box-sizing: border-box;
+	padding-right: 30px;
 }
